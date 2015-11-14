@@ -78,7 +78,11 @@ if (!$stmt->execute()) {
 }
 printf("%d Row inserted.\n", $stmt->affected_rows);
 /* explicit close recommended */
-$Arn = $s3->createTopic([
+$sns = new Aws\Sns\SnsClient([
+    'version' => 'latest',
+    'region'  => 'us-west-2'
+]);
+$Arn = $sns->createTopic([
 'Name' => 'mp2',
 ]);
 
