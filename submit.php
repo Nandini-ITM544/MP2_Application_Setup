@@ -78,6 +78,10 @@ if (!$stmt->execute()) {
 }
 printf("%d Row inserted.\n", $stmt->affected_rows);
 /* explicit close recommended */
+$Arn = $s3->createTopic([
+'Name' => 'mp2',
+]);
+
 header("location: gallery.php");
 $stmt->close();
 
