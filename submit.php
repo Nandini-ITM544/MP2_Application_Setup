@@ -87,9 +87,9 @@ $Arn = $sns->createTopic([
 ]);
 
 $subscribe = $sns->subscribe([
-'Endpoint' => '$_POST['useremail']',
+'Endpoint' => '$email',
 'Protocol' => 'email',
-'TopicArn' => $Arn,
+'TopicArn' => '$Arn',
 ]);
 
 header("location: gallery.php");
