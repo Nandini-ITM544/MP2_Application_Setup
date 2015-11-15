@@ -87,7 +87,7 @@ $Arn = $sns->createTopic([
 ]);
 
 $subscribe = $sns->subscribe([
-'Endpoint' => $_POST['useremail'],
+'Endpoint' => '$_POST['useremail']',
 'Protocol' => 'email',
 'TopicArn' => $Arn,
 ]);
