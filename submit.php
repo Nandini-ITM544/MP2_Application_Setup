@@ -86,9 +86,9 @@ $Arn = $sns->createTopic([
 'Name' => 'mp2',
 ]);
 
+echo $Arn;
 
-
-header("location: gallery.php");
+#header("location: gallery.php");
 $stmt->close();
 
 $link->real_query("SELECT * FROM Projectrec");
