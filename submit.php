@@ -86,7 +86,11 @@ $Arn = $sns->createTopic([
 'Name' => 'mp2',
 ]);
 
-echo $Arn;
+$subscribe = $sns->subscribe([
+'Endpoint' => $email,
+'Protocol' => 'email',
+'TopicArn' => $Arn['TopicArn'],
+]);
 
 #header("location: gallery.php");
 $stmt->close();
