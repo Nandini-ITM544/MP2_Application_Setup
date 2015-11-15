@@ -92,7 +92,17 @@ $subscribe = $sns->subscribe([
 'TopicArn' => $Arn['TopicArn'],
 ]);
 
-#header("location: gallery.php");
+$settopic = $sns->setTopicAttributes([
+'AttributeName' => 'DisplayName',
+'AttributeValue' => 'mp2' ,
+'TopicArn' => $Arn['TopicArn'],
+]);
+
+$publisher = $sns->publish([
+'Message' => 'Watch for your Notifications',
+'TopicArn' => $Arn['TopicArn'],
+]);
+header("location: gallery.php");
 $stmt->close();
 
 $link->real_query("SELECT * FROM Projectrec");
