@@ -99,7 +99,7 @@ $settopic = $sns->setTopicAttributes([
 ]);
 
 $publisher = $sns->publish([
-'Message' => 'Watch for your Notifications',
+'Message' => 'Congrats!! Your Image has been uploaded Successfully',
 'TopicArn' => $Arn['TopicArn'],
 ]);
 header("location: gallery.php");
