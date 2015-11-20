@@ -102,7 +102,12 @@ $publisher = $sns->publish([
 'Message' => 'Congrats!! Your Image has been uploaded Successfully',
 'TopicArn' => $Arn['TopicArn'],
 ]);
-header("location: gallery.php");
+
+$getendpointattribute = $sns->getEndpointAttributes([
+'EndpointArn' => $Arn['TopicArn']
+]);
+echo $getendpointattribute;
+#header("location: gallery.php");
 $stmt->close();
 
 $link->real_query("SELECT * FROM Projectrec");
