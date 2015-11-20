@@ -91,7 +91,7 @@ $subscribe = $sns->subscribe([
 'Protocol' => 'email',
 'TopicArn' => $Arn['TopicArn'],
 ]);
-echo $subscribe;
+
 $settopic = $sns->setTopicAttributes([
 'AttributeName' => 'DisplayName',
 'AttributeValue' => 'mp2' ,
@@ -103,11 +103,9 @@ $publisher = $sns->publish([
 'TopicArn' => $Arn['TopicArn'],
 ]);
 
-$getendpointattribute = $sns->getEndpointAttributes([
-'EndpointArn' => $Arn['TopicArn'],
-]);
-echo $getendpointattribute;
-#header("location: gallery.php");
+
+
+header("location: gallery.php");
 $stmt->close();
 
 $link->real_query("SELECT * FROM Projectrec");
