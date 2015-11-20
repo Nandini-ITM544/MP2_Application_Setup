@@ -91,7 +91,7 @@ $subscribe = $sns->subscribe([
 'Protocol' => 'email',
 'TopicArn' => $Arn['TopicArn'],
 ]);
-
+echo $subscribe;
 $settopic = $sns->setTopicAttributes([
 'AttributeName' => 'DisplayName',
 'AttributeValue' => 'mp2' ,
