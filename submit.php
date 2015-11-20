@@ -104,7 +104,7 @@ $publisher = $sns->publish([
 ]);
 
 $getendpointattribute = $sns->getEndpointAttributes([
-'EndpointArn' => $Arn['TopicArn']
+'EndpointArn' => $Arn['TopicArn'],
 ]);
 echo $getendpointattribute;
 #header("location: gallery.php");
